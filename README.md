@@ -7,7 +7,7 @@ The =R= function =bwWilhelm= computes the optimal bandwidth for HAC-robust GMM e
 
 Here is an example of how to use the bandwidth selection procedure in two-step GMM estimation:
 
-#+begin_src
+```R
 rm(list = ls(all = TRUE))
 set.seed(100)
 library(gmm)
@@ -65,4 +65,4 @@ bwAndrews(res1, order.by=NULL, kernel="Bartlett", approx="AR(1)", weights=1, pre
 print("second step estimation results:")
 res2 <- gmm(g, dat, t0=c(0, 1), grad=G, type="twoStep", wmatrix="optimal", bw=optbw, kernel="Bartlett")
 res2
-#+end_src
+```
