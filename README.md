@@ -1,9 +1,6 @@
 # R-GMM-bandwidth
-this project provides an implementation of the bandwidth choice for robust GMM estimation as described in Wilhelm (2015)
 
-
-
-The =R= function =bwWilhelm= computes the optimal bandwidth for HAC-robust GMM estimation as proposed in Wilhelm (2015, Econometric Theory, 31, 1054–1077, "Optimal Bandwidth Selection for Robust Generalized Method of Moments Estimation"). The arguments the function requires are identical to those of existing bandwidth selection methods such as the function =bwAndrews= in the =sandwich= package, except that the data matrix =x= (here the moment function evaluated at the data) must be an object of class =gmm=.
+The `R` function `bwWilhelm` computes the optimal bandwidth for HAC-robust GMM estimation as proposed in Wilhelm (2015). The arguments the function requires are identical to those of existing bandwidth selection methods such as the function `bwAndrews` in the `sandwich` package, except that the data matrix `x` (here the moment function evaluated at the data) must be an object of class `gmm`.
 
 Here is an example of how to use the bandwidth selection procedure in two-step GMM estimation:
 
@@ -66,3 +63,7 @@ print("second step estimation results:")
 res2 <- gmm(g, dat, t0=c(0, 1), grad=G, type="twoStep", wmatrix="optimal", bw=optbw, kernel="Bartlett")
 res2
 ```
+
+
+# Reference
+[Wilhelm, D. (2015), "Optimal Bandwidth Selection for Robust Generalized Method of Moments Estimation", Econometric Theory, 31, 1054–1077](http://dx.doi.org/10.1017/S026646661400067X)
