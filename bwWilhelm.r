@@ -5,6 +5,9 @@ bwWilhelm <- function(x, order.by = NULL, kernel = c("Quadratic Spectral",
   ## ensure that NAs are omitted
   if(is.list(x) && !is.null(x$na.action)) class(x$na.action) <- "omit"
 
+  # ensure that x is a gmm object
+  stopifnot(attr(x,"class")=="gmm")
+
   kernel <- match.arg(kernel)
   approx <- match.arg(approx)
   prewhite <- as.integer(prewhite)
